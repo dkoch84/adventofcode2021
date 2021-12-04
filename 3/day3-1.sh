@@ -1,5 +1,4 @@
 #!/bin/bash
-
 bits=$(head -n 1 day3.txt | awk 'BEGIN {FS = ""}{print NF}')
 i=1
 delta=""
@@ -21,4 +20,5 @@ while [[ $i -le $bits ]]; do
     let i++
 done
 
-echo $(($(echo $((2#$delta))) * $(echo $((2#$epsilon)))))
+echo $(( $(echo "$((2#$delta))") "*" $(echo "$((2#$epsilon))")))
+exit 0
